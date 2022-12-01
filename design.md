@@ -2,15 +2,15 @@
 
 ### Requirements
 
-To create an API wrapper for The One SDK, which is a Lord of the Rings API. `https://the-one-api.dev`
+To create an API wrapper for The One API, which is a Lord of the Rings data API. `https://the-one-api.dev`
 
 ### Credits
 
-This project is inspired by `https://github.com/imdurgadas/sdk-typescript` repository
+This project is inspired by the `https://github.com/imdurgadas/sdk-typescript` repository
 
 ### Libraries
 
-- `microbunle`
+- `microbundle`
 - `typescript`
 - `isomorphic-unfetch`
 
@@ -18,15 +18,15 @@ This project is inspired by `https://github.com/imdurgadas/sdk-typescript` repos
 
 #### Tech Stack
 
-The SDK uses `typescript` and the `microbundle` package to create the NPM package. Microbundle is great because of a zero-config style to preprae a package that can be used from Web or NodeJS.
+The SDK uses `typescript` and the `microbundle` package to create the NPM package. Microbundle is great because of a zero-config style to prepare a package that can be used from Web or NodeJS.
 
 For calling REST API endpoints, the `isomorphic-unfetch` package is a good choice for providing Browser level and Backend API request calling in a unified way.
 
 #### Structure
 
-The One API end points are devided into top level models `book` `movie` `chapter` `character` and `quote`
+The One API endpoints are devided into top level models (`book` `movie` `chapter` `character` and `quote`)
 
-The SDK creates a sperate modal class per top level AP endpoint module into its own modal and a wrapper class `TheOne` encapsulates all the top level modals. Each API modal will contain its own type definitions
+The SDK creates a sperate modal class per top level AP endpoint module into its own modal and a wrapper class `TheOne` class encapsulates all the top level modals. Each API modal will contain its own type definitions
 
 ```bash
 📦src
@@ -87,21 +87,21 @@ Example: The `book` API
 }
 ```
 
-Return data contains a `docs` array of results along with metadata about the result set
+Return data contains a `docs` array of results along with metadata about the result set.
 
-A templatized `Docs` datatype is created by the SDK to wrap each SDK result with the respective datatypes
+A templatized `Docs` datatype is created by the SDK to wrap each SDK result with the respective datatypes.
 
-Example: The `book` api will return `Docs<Book>` datatype
+Example: The `book` api will return `Docs<Book>` datatype.
 
 ```js
 const result: Docs<Book> = await client.books.getAll()
 ```
 
-`results` object will contain a `docs` memeber of type `Book[]` which is an array of Book object
+`results` object will contain a `docs` memeber of type `Book[]` which is an array of Book objects.
 
 #### SDK query options
 
-The One API documentation `https://the-one-api.dev/documentation` explains the use of additional query options for `pagination`, `sorting` and `filtering` each API request
+The One API documentation `https://the-one-api.dev/documentation` explains the use of additional query options for `pagination`, `sorting` and `filtering` for each API request.
 
 `TheOne` SDK calls can include a configuraion object to proxy the API configuration options to the request call.
 
