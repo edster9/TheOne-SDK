@@ -14,8 +14,10 @@ export class Quotes extends Base {
 	 *
 	 * @returns A Docs object containing an array of all the Quotes
 	 */
-	getAll(): Promise<Docs<Quote>> {
-		return this.request(`/${resourceName}`, {}, true)
+	getAll(options?: any): Promise<Docs<Quote>> {
+		const params = new URLSearchParams(options).toString()
+
+		return this.request(`/${resourceName}` + (params && `?${params}`), {}, true)
 	}
 
 	/**

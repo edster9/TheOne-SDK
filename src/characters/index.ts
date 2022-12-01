@@ -14,8 +14,10 @@ export class Characters extends Base {
 	 *
 	 * @returns A Docs object containing an array of all the Characters
 	 */
-	getAll(): Promise<Docs<Character>> {
-		return this.request(`/${resourceName}`, {}, true)
+	getAll(options?: any): Promise<Docs<Character>> {
+		const params = new URLSearchParams(options).toString()
+
+		return this.request(`/${resourceName}` + (params && `?${params}`), {}, true)
 	}
 
 	/**

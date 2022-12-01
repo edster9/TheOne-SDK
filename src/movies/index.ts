@@ -14,8 +14,10 @@ export class Movies extends Base {
 	 *
 	 * @returns A Docs object containing an array of all the Movies
 	 */
-	getAll(): Promise<Docs<Movie>> {
-		return this.request(`/${resourceName}`, {}, true)
+	getAll(options?: any): Promise<Docs<Movie>> {
+		const params = new URLSearchParams(options).toString()
+
+		return this.request(`/${resourceName}` + (params && `?${params}`), {}, true)
 	}
 
 	/**

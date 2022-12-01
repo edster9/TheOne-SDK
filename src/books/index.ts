@@ -14,8 +14,10 @@ export class Books extends Base {
 	 *
 	 * @returns A Docs object containing an array of all the Books
 	 */
-	getAll(): Promise<Docs<Book>> {
-		return this.request(`/${resourceName}`)
+	getAll(options?: any): Promise<Docs<Book>> {
+		const params = new URLSearchParams(options).toString()
+
+		return this.request(`/${resourceName}` + (params && `?${params}`))
 	}
 
 	/**

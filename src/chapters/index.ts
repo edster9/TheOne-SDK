@@ -14,8 +14,10 @@ export class Chapters extends Base {
 	 *
 	 * @returns A Docs object containing an array of all the Chapters
 	 */
-	getAll(): Promise<Docs<Chapter>> {
-		return this.request(`/${resourceName}`, {}, true)
+	getAll(options?: any): Promise<Docs<Chapter>> {
+		const params = new URLSearchParams(options).toString()
+
+		return this.request(`/${resourceName}` + (params && `?${params}`), {}, true)
 	}
 
 	/**
