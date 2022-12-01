@@ -19,15 +19,34 @@ yarn add @ed.sahakian/theone
 
 ```js
 // Import the package
-import TheOne from "@ed.sahakian/theone";
+import TheOne from '@ed.sahakian/theone'
 
 // Initialize the SDK
 const client = new TheOne({
-  apiKey: "XXX-API-KEY-XXX",
-});
+	apiKey: 'XXX-API-KEY-XXX',
+})
 
 // Example of fetching all the books
 client.books.getAll().then((res) => {
-  console.log(res);
-});
+	console.log(res)
+})
+
+// Get one book by ID
+client.books.getOne('XXX-ID-XXX').then((res) => {
+	console.log(res)
+})
+```
+
+Advanced usage of API using (pagination and sorting) based on The One SDK documentation `https://the-one-api.dev/documentation`
+
+```js
+// Limit the result to first 100 character quotes only
+client.quotes.getAll({ limit: '100' }).then((res) => {
+	console.log(res)
+})
+
+// Limit the result to first 100 characters and sort on "name" column by asceding order
+client.characters.getAll({ sort: 'name:asc', limit: '100' }).then((res) => {
+	console.log(res)
+})
 ```
