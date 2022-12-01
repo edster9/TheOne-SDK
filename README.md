@@ -50,3 +50,15 @@ client.characters.getAll({ sort: 'name:asc', limit: '100' }).then((res) => {
 	console.log(res)
 })
 ```
+
+## Test Client
+
+The included `test-client` directory is a sample mini application using `TheOne SDK`
+
+The example has examples of the SDK usage in `./test-client/src/index.ts`
+
+```bash
+cd test-client
+yarn
+yarn run dev
+```
