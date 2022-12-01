@@ -1,10 +1,12 @@
 import TheOne from '@ed.sahakian/theone'
+import { Book } from '@ed.sahakian/theone/dist/books/types'
+import { Docs } from '@ed.sahakian/theone/dist/types'
 
 const client = new TheOne({
 	apiKey: 'ZL6WU6WyLD-icp0JXGlI',
 })
 
-// client.books.getAll().then((res) => {
+// client.books.getAll().then((res: Docs<Book>) => {
 // 	console.log(res)
 // })
 
