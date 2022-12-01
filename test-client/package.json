@@ -12,5 +12,7 @@
     "start": "node dist/index.js",
     "dev": "ts-node ./src/index.ts"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@ed.sahakian/theone": "^1.0.7"
+  }
 }
