@@ -6,9 +6,9 @@ const client = new TheOne({
 	apiKey: 'ZL6WU6WyLD-icp0JXGlI',
 })
 
-// client.books.getAll().then((res: Docs<Book>) => {
-// 	console.log(res)
-// })
+client.books.getAll().then((res: Docs<Book>) => {
+	console.log(res)
+})
 
 // client.books.getOne('5cf58077b53e011a64671583').then((res) => {
 // 	console.log(res)
