@@ -4,9 +4,9 @@ const client = new TheOne({
   apiKey: "ZL6WU6WyLD-icp0JXGlI",
 });
 
-// client.books.getAll().then((res) => {
-//   console.log(res);
-// });
+client.books.getAll().then((res) => {
+  console.log(res);
+});
 
 // client.movies.getAll().then((res) => {
 // 	console.log(res)
