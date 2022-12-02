@@ -1,7 +1,7 @@
 {
   "name": "@ed.sahakian/theone",
   "version": "1.0.8",
-  "description": "",
+  "description": "A simple JavaScript API wrapper for accesing the The One API https://the-one-api.dev/",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
